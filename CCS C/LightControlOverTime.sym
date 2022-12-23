@@ -1,0 +1,159 @@
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+004-005 @READ_PROGRAM_MEMORY8.P2
+008     PSP_DATA
+015     CCP_1
+015     CCP_1_LOW
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     hr
+021     min
+022     sec
+023     hr_turn_on
+024     min_turn_on
+025     sec_turn_on
+026     hr_turn_off
+027     min_turn_off
+028     sec_turn_off
+029     time_mod
+02A     start
+02B     @PRINTF_D0_645.P1
+02B     LED_Control.hr
+02B     @PSTRINGCN7_645.P1
+02B     rtc_init.x
+02B     lcd_init.i
+02B     rtc_get_time.@SCRATCH1
+02B     MAIN.@SCRATCH1
+02B     @PSTRINGC7_645.@SCRATCH1
+02B     Set_Time.@SCRATCH1
+02C-02F lcd_init.LCD_INIT_STRING
+02C     @PRINTF_D0_645.P1
+02C     LED_Control.min
+02C     write_ds1302.cmd
+02C     rtc_init.@SCRATCH1
+02C     @PSTRINGCN7_645.@SCRATCH1
+02C     @PSTRINGC7_645.@SCRATCH2
+02D     write_ds1302.data
+02D     LED_Control.sec
+02D     @PRINTF_D0_645.@SCRATCH1
+02D     @PSTRINGCN7_645.@SCRATCH2
+02D     @PSTRINGC7_645.@SCRATCH3
+02E     read_ds1302.cmd
+02E     @PRINTF_D0_645.@SCRATCH2
+02E     @PSTRINGCN7_645.@SCRATCH3
+02E     @PSTRINGC7_645.@SCRATCH4
+02F     rm_bcd.data
+02F     read_ds1302.i
+02F     @PRINTF_D0_645.@SCRATCH3
+02F     @PSTRINGCN7_645.@SCRATCH4
+030     read_ds1302.data
+030     rm_bcd.i
+030     lcd_init.@SCRATCH1
+030     @PRINTF_D0_645.@SCRATCH4
+031     @DIV88.P1
+031     write_ds1302_byte.cmd
+031     lcd_putc.c
+031     rm_bcd.@SCRATCH1
+032     lcd_gotoxy.x
+032     @delay_ms1.P1
+032     @DIV88.P2
+032     write_ds1302_byte.i
+032     rm_bcd.@SCRATCH2
+033     @MUL88.P1
+033     lcd_gotoxy.y
+033     @DIV88.@SCRATCH1
+034     @MUL88.P1
+034     lcd_gotoxy.address
+035     lcd_gotoxy.@SCRATCH1
+036     lcd_send_byte.address
+037     lcd_send_byte.n
+038     lcd_read_byte.low
+038     lcd_send_byte.@SCRATCH1
+039     lcd_send_nibble.n
+039     lcd_read_byte.high
+03A     lcd_read_nibble.n
+03A     lcd_read_byte.@SCRATCH1
+03B     lcd_read_nibble.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @const728.call
+00000E  @const732.call
+000011  @const734.call
+00001B  @const736.call
+00001F  @const737.call
+000023  @const738.call
+000027  @const739.call
+00002B  @const740.call
+00002F  @const741.call
+000033  @const742.call
+000037  @delay_ms1
+00004B  lcd_send_nibble
+00007B  lcd_read_nibble
+0000AC  lcd_send_byte
+0000B4  lcd_read_byte
+00010C  lcd_init
+000150  write_ds1302_byte
+000168  write_ds1302
+000177  read_ds1302
+0001B1  rtc_init
+0001D8  lcd_gotoxy
+0001EA  lcd_putc
+000216  @PSTRINGC7_645
+00026C  rm_bcd
+000278  @MUL88
+0002A4  @DIV88
+0002B9  @PRINTF_D0_645
+000310  @PSTRINGCN7_645
+000367  Show_Time
+0003DC  Set_Time
+0004C0  Set_Time_Mod
+000540  LED_Control
+000564  @cinit1
+000564  MAIN
+00056F  @cinit2
+00058E  rtc_get_time
+
+Project Directory:
+    C:\Users\ACER\Desktop\Git_Project\Light_Control_Over_Time\CCS C\
+
+Project Files:
+    LightControlOverTime.c                                  [22-Dec-22 23:44  CRC=4B9E918A]
+    LightControlOverTime.h                                  [21-Dec-22 17:00  CRC=32252836]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F877A.h [12-Nov-13 14:35  CRC=81334808]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD.C [19-Sep-13 15:38  CRC=D1A6378A]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\DS1302.c [06-Aug-13 08:39  CRC=94C9FE1A]
+
+Source signature=FA313586
+
+Units:
+    LightControlOverTime (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   LightControlOverTime.xsym
+    Errors:      LightControlOverTime.err
+    Ext Symbols: LightControlOverTime.esym
+    INHX8:       LightControlOverTime.hex
+    Symbols:     LightControlOverTime.sym
+    List:        LightControlOverTime.lst
+    Debug/COFF:  LightControlOverTime.cof
+    Project:     LightControlOverTime.ccspjt
+    Call Tree:   LightControlOverTime.tre
+    Statistics:  LightControlOverTime.STA

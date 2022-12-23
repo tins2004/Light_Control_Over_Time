@@ -1,0 +1,30 @@
+[PROJECT]
+Target=LightControlOverTime.hex
+Processor_Text=PIC16F877A
+CCSVerions=5.015
+Compiler=PCM
+CCSVersion=5.015
+[Target Data]
+FileList=LightControlOverTime.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[C:\Users\ACER\Desktop\Project IOT\Light_Control_Over_Time\CCS C\LightControlOverTime]
+Type=4
+[mru-list]
+1=LightControlOverTime.c
+[Opened Files]
+1=LightControlOverTime.c
+2=LightControlOverTime.h
+3=..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\DS1302.c
+4=
+[LightControlOverTime.c]
+Type=4
+[Documentation]
+1=C:\Users\ACER\Desktop\Project IOT\Light_Control_Over_Time\CCS C\LightControlOverTime Notes.txt
+1T=LightControlOverTime Notes.txt
+1E=
+1W=0
+Count=1
+[Units]
+Count=1
+1=LightControlOverTime (main)
